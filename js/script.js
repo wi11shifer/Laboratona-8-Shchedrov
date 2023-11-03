@@ -10,24 +10,7 @@ function updateScore() {
     document.getElementById('userScore').textContent = `Користувач: ${userScore}`;
     document.getElementById('computerScore').textContent = `Комп'ютер: ${computerScore}`;
 }
-document.getElementById('startButton').addEventListener('click', function() {
-    if (!gameOver) {
-        const userNumber = generateRandomNumber();
-        const computerNumber = generateRandomNumber();
 
-        document.getElementById('userNumber').textContent = `Число користувача: ${userNumber}`;
-        document.getElementById('computerNumber').textContent = `Число комп'ютера: ${computerNumber}`;
-
-        if (userNumber > computerNumber) {
-            userScore++;
-        } else if (userNumber < computerNumber) {
-            computerScore++;
-        }
-
-        updateScore();
-        checkWinner();
-    }
-});
 function checkWinner() {
     if (userScore >= 3) {
         alert('Ви виграли!');
@@ -42,6 +25,9 @@ document.getElementById('startButton').addEventListener('click', function() {
     if (!gameOver) {
         const userNumber = generateRandomNumber();
         const computerNumber = generateRandomNumber();
+
+        document.getElementById('userNumber').textContent = `Число користувача: ${userNumber}`;
+        document.getElementById('computerNumber').textContent = `Число комп'ютера: ${computerNumber}`;
 
         if (userNumber > computerNumber) {
             userScore++;
